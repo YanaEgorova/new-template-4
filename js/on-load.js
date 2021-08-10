@@ -5,7 +5,7 @@ import {tableRowTemplate} from './templates/table-row-template.js';
 const cartSpan = document.querySelector('.js_cart__span');
 const tableRow = document.querySelector('.js_table-row');
 const totalQuantity = document.querySelector('.js_total-quantity');
-const totalPrice = document.querySelector('.js_total-price');
+const totalPrice = document.querySelectorAll('.js_total-price');
 const emptyMessage = document.querySelector('.js_empty-cart');
 const table = document.querySelector('.js_product-table');
 
@@ -44,7 +44,9 @@ function shopPageFunctional() {
       tableRow.insertAdjacentHTML('afterend', tableRowTemplate(product));
    });
    totalQuantity.textContent = setAmountToCartSpan();
-   totalPrice.textContent = `$${total}`;
+      [...totalPrice].forEach(totalPrice => {
+      totalPrice.textContent = `$${total}`;
+   })
    const removeBtns = document.querySelectorAll('.js_remove-product');
    removeBtns.forEach(btn => {
       btn.addEventListener('click', removeItem);
@@ -66,7 +68,9 @@ function removeItem(e) {
   })
 
   totalQuantity.textContent = setAmountToCartSpan();
-  totalPrice.textContent = `$${total}`;
+     [...totalPrice].forEach(totalPrice => {
+      totalPrice.textContent = `$${total}`;
+   })
   
   parent.remove();
   if(updatedCart.length === 0) {
