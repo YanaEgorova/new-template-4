@@ -13,6 +13,7 @@ const table = document.querySelector('.js_product-table');
 
 
 
+
 window.onload = function() {
    console.log(Date())
    cartSpan.textContent = setAmountToCartSpan();
@@ -23,6 +24,14 @@ window.onload = function() {
       const form = document.querySelector('.js_form');
       console.log('form', form)
       form.addEventListener('submit', clearLocalStorage);
+   }
+   if(document.querySelector('.js_prod__amount-span')) {
+      const incrementAndDecrementSpan = document.querySelector('.js_prod__amount-span');
+      if(Number(incrementAndDecrementSpan.textContent) > 1) {
+         const lessBtn = document.querySelector('.js_prod__btn-less');
+         lessBtn.classList.remove('disable-btn');
+         console.log('lessBtn', lessBtn)
+      }
    }
 };
 
@@ -44,9 +53,10 @@ function shopPageFunctional() {
       tableRow.insertAdjacentHTML('afterend', tableRowTemplate(product));
    });
    totalQuantity.textContent = setAmountToCartSpan();
-      [...totalPrice].forEach(totalPrice => {
-      totalPrice.textContent = `$${total}`;
+   [...totalPrice].forEach(totalPrice => {
+      totalPrice.textContent = `$${total.toFixed(2)}`;
    })
+   
    const removeBtns = document.querySelectorAll('.js_remove-product');
    removeBtns.forEach(btn => {
       btn.addEventListener('click', removeItem);
@@ -64,13 +74,12 @@ function removeItem(e) {
   getLocalStorageItem().forEach(product => {
    const productTotal = Number((product.quantity * product.price).toFixed(2));
    total = total + productTotal;
-   console.log('total', total)
   })
 
   totalQuantity.textContent = setAmountToCartSpan();
-     [...totalPrice].forEach(totalPrice => {
-      totalPrice.textContent = `$${total}`;
-   })
+  [...totalPrice].forEach(totalPrice => {
+   totalPrice.textContent = `$${total.toFixed(2)}`;
+})
   
   parent.remove();
   if(updatedCart.length === 0) {
