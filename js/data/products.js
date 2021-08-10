@@ -252,25 +252,28 @@ export const products = [
     },
     {
         id: 'product-10',
-        name: 'Wireless Controller',
+        name: 'Bicycle Mounted Child Carrier',
         price: 84.41,
         discount: 95.50,
         image: './img/img10.png',
         description: [
             {
-                title: 'Haptic feedback',
-                text: 'Feel physically responsive feedback to your in-game actions with dual actuators which replace traditional rumble motors. In your hands, these dynamic vibrations can simulate the feeling of everything from environments to the recoil of different weapons.',
+                text: 'LIGHTWEIGHT at 7.25 lbs., water resistant, and washable',
             },
             {
-                title: 'Adaptive triggers',
-                text: 'Experience varying levels of force and tension as you interact with your in-game gear and environments. From pulling back an increasingly tight bowstring to hitting the brakes on a speeding car, feel physically connected to your on-screen actions.',
+                text: 'QUICK RELEASE: Push button allows for the quick removal of the seat from your bicycle',
             },
             {
-                title: 'Built-in microphone and headset jack',
-                text: 'Chat with friends online using the built-in microphone or by connecting a headset to the 3.5mm jack. Easily switch voice capture on and off at a moment’s notice with the dedicated mute button.',
+                text: 'DESIGNED with the most advanced comfort features including a reclined angle for neck and shoulder support and high sideboards to decrease turbulence',
+            },
+            {
+                text: 'SAFETY FIRST with wider, safer leg and feet side protection, a childproof and parent-friendly safety buckle, three-point safety harness, and secure mounting',
+            },
+            {
+                text: 'MAX WEIGHT 50 lbs. Fits round seat tubes of 25-46 mm or oval seat tubes 30-60 mm',
             },
         ],
-        images: ['./img/img10-1.png', './img/img10-2.png', './img/img10-3.png'],
+        images: ['./img/img10-1.jpg', './img/img10-2.jpg', './img/img10-3.jpg'],
     },
     {
         id: 'product-11',
